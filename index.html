@@ -50,7 +50,7 @@ content="width=device-width,
 
     
 
-  </body>
+
 <script>
 const projects = document.getElementById('projects') 
 const links = document.getElementById('links') 
@@ -63,8 +63,28 @@ close.onclick = function() {
 links.style.display = 'none' 
 } 
 
+let canvas = document.createElement('canvas') 
+  document.body.appendChild(canvas) 
+  canvas.width = window.innerWidth - 1
+  canvas.height = window.innerHeight 
+  const ctx = canvas.getContext('2d')
 
-        
+  const pencil = new Image() 
+  pencil.src = 'pencil.png'
+  function border(){
+   ctx.strokeStyle = 'cyan' 
+   ctx.strokeRect(0,0, canvas.width, canvas.height) 
+  }
+border() 
+
+  function loop() {
+    ctx.clearRect(0,0, canvas.width, canvas.height) 
+    border()
+    ctx.drawImage(pencil, 0,0,100, 100)
+   } 
+  setInterval(loop, 20)
+  
 </script>
 <footer>                        <!--              --></footer>
+  </body>
 </html>
