@@ -36,15 +36,23 @@ content="width=device-width,
   </head>
   <body>
     <h2 id="projects">projects</h2>
+    
     <div id="links" >
       <close id="close">X</close>
+      
       <a href="dynamicmarquee.html" target="blank" >
         dynamic marquee
       </a>
+      
+      <a href="canvas drawImage method.html" target="blank" >
+        canvas drawImage method
+      </a>
+      
     </div>
+    
 <marquee direction="" behavior="alternate" 
   scrollamount="" scrolldelay="" bgcolor="" >
-  for test codes
+  for testing codes
 </marquee>
 
 
@@ -63,27 +71,7 @@ close.onclick = function() {
 links.style.display = 'none' 
 } 
 
-let canvas = document.createElement('canvas') 
-  document.body.appendChild(canvas) 
-  canvas.width = window.innerWidth - 1
-  canvas.height = window.innerHeight - 50
-  const ctx = canvas.getContext('2d')
 
-  const pencil = new Image() 
-  pencil.src = 'pencil.png'
-  function border(){
-   ctx.strokeStyle = 'cyan' 
-   ctx.strokeRect(0,0, canvas.width, canvas.height) 
-  }
-border() 
-
-  function loop() {
-    ctx.clearRect(0,0, canvas.width, canvas.height) 
-    border()
-    ctx.drawImage(pencil, 0,0,100, 100)
-   } 
-  setInterval(loop, 20)
-  
 </script>
 <footer>                        <!--              --></footer>
   </body>
