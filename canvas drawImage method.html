@@ -1,0 +1,90 @@
+<html>
+  <head>
+<meta name="viewport" 
+content="width=device-width,
+                  height=device-height, 
+                  initial-scale=1.0">
+    <title></title>
+    <style>
+*{margin:0px;padding:0px;}
+    body{background-color: rgb(0,0,0);
+               color: lime;
+} 
+    #links{
+      display:none;
+     } 
+    #close{
+      position:absolute ;
+      display:grid;
+      place-items:center ;
+      width:40px;
+      height:40px;
+      top:50px;
+      right:0px;
+      background-color:red;
+      color:black ;
+      font-size:40px ;
+      font-weight:bold ;
+     } 
+      marquee{
+        position:absolute ;
+        width:calc(100% - 100px) ;
+        top:0px;
+        left:100px;
+       } 
+    </style>
+  </head>
+  <body>
+    <h2 id="projects">projects</h2>
+    <div id="links" >
+      <close id="close">X</close>
+      <a href="dynamicmarquee.html" target="blank" >
+        dynamic marquee
+      </a>
+    </div>
+<marquee direction="" behavior="alternate" 
+  scrollamount="" scrolldelay="" bgcolor="" >
+  for test codes
+</marquee>
+
+
+    
+
+
+<script>
+const projects = document.getElementById('projects') 
+const links = document.getElementById('links') 
+const close = document.getElementById('close') 
+
+projects.onclick = function() {
+links.style.display = 'block'       
+} 
+close.onclick = function() {
+links.style.display = 'none' 
+} 
+
+let canvas = document.createElement('canvas') 
+  document.body.appendChild(canvas) 
+  canvas.width = window.innerWidth - 1
+  canvas.height = window.innerHeight - 50
+  const ctx = canvas.getContext('2d')
+
+  const pencil = new Image() 
+  pencil.src = 'pencil.png'
+  function border(){
+   ctx.strokeStyle = 'cyan' 
+   ctx.strokeRect(0,0, canvas.width, canvas.height) 
+  }
+border() 
+
+  function loop() {
+    ctx.clearRect(0,0, canvas.width, canvas.height) 
+    border()
+    ctx.drawImage(pencil, 0,0,100, 100)
+   } 
+  setInterval(loop, 20)
+  
+</script>
+<footer>                        <!--              --></footer>
+  </body>
+</html>
