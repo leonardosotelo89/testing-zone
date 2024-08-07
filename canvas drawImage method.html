@@ -40,9 +40,9 @@ border()
     ctx.clearRect(0,0, canvas.width, canvas.height) 
     border()
     
-    ctx.imageSmothingEnabled = true
+    ctx.imageSmoothingEnabled = true
     ctx.drawImage(pencil, 0,0,100, 100)
-    ctx.imageSmothingEnabled = false
+    ctx.imageSmoothingEnabled = false
     ctx.drawImage(pencil, 0,100,100, 100)
    } 
   setInterval(loop, 20)
