@@ -39,7 +39,11 @@ border()
   function loop() {
     ctx.clearRect(0,0, canvas.width, canvas.height) 
     border()
+    
+    ctx.imageSmothingEnabled = true
     ctx.drawImage(pencil, 0,0,100, 100)
+    ctx.imageSmothingEnabled = false
+    ctx.drawImage(pencil, 0,0,100, 300)
    } 
   setInterval(loop, 20)
   
