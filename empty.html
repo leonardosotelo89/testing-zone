@@ -197,10 +197,6 @@ function show(){
 mainaudio.onended = function(){
     show()
 }
-mainaudio.ontimeupdate = function() {
-  console.log('Current time:', mainaudio.currentTime);
-  div2.innerHTML = mainaudio.currentTime 
-};
 
 status.onclick = function(){
   start = start ? false : true 
