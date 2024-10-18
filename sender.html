@@ -1,0 +1,32 @@
+<html>
+  <head>
+<meta name="viewport" 
+content="width=device-width,
+                  height=device-height, 
+                  initial-scale=1.0">
+    <title></title>
+    <style>
+*{margin:0px;padding:0px;}
+    body{background-color: rgb(0,0,0);
+               color: lime;
+} 
+    </style>
+  </head>
+  <body>
+   
+
+  
+<script>
+
+  // Create a new BroadcastChannel
+const channel = new BroadcastChannel('my_channel');
+
+// Send a message to all other listening contexts
+channel.postMessage({ type: 'greeting', message: 'Hello from Tab 1!' });
+
+// Close the channel when done
+// channel.close();
+</script>
+<footer>         <!--              --></footer>
+</body>
+</html>
