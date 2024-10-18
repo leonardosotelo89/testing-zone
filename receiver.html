@@ -10,10 +10,18 @@ content="width=device-width,
     body{background-color: rgb(0,0,0);
                color: lime;
 } 
+button{
+  width:100px ;
+  height:100px ;
+  background-color:blue ;
+  color:lime;
+  font-size:40px ;
+ } 
     </style>
   </head>
   <body>
-   
+
+<button id="send2" onclick="greeting2()" >send 2</button>
 
   
 <script>
@@ -24,14 +32,21 @@ const channel = new BroadcastChannel('my_channel');
 // Listen for messages from other contexts
 channel.onmessage = function (event) {
   console.log('Received message:', event.data);
-  if (event.data.type === 'greeting') {
-    console.log('Message:', event.data.message);
-    document.body.innerHTML += event.data +"<br>" +event.data.message
+  if (event.data.type === 'greeting1') {
+    console.log('Message:', event.data.message1);
+    document.body.innerHTML += event.data.toString() +
+      "<br>" +event.data.message1
   }
 };
 
 // Close the channel when done
 // channel.close();
+
+function greeting2() {
+// Send a message to all other listening contexts
+channel.postMessage({ type: 'greeting2', message2: 'Hello from Tab 2!' });
+} 
+
 </script>
 <footer>         <!--              --></footer>
 </body>
