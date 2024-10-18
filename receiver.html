@@ -1,0 +1,38 @@
+<html>
+  <head>
+<meta name="viewport" 
+content="width=device-width,
+                  height=device-height, 
+                  initial-scale=1.0">
+    <title></title>
+    <style>
+*{margin:0px;padding:0px;}
+    body{background-color: rgb(0,0,0);
+               color: lime;
+} 
+    </style>
+  </head>
+  <body>
+   
+
+  
+<script>
+
+  // Create a new BroadcastChannel with the same channel name
+const channel = new BroadcastChannel('my_channel');
+
+// Listen for messages from other contexts
+channel.onmessage = function (event) {
+  console.log('Received message:', event.data);
+  if (event.data.type === 'greeting') {
+    console.log('Message:', event.data.message);
+    document.body.innerHTML += event.data +"<br>" +event.data.message
+  }
+};
+
+// Close the channel when done
+// channel.close();
+</script>
+<footer>         <!--              --></footer>
+</body>
+</html>
