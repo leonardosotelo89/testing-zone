@@ -42,7 +42,7 @@ channel.onmessage = function (event) {
   console.log('Received message:', event.data);
   if (event.data.type === 'greeting2') {
     console.log('Message2:', event.data.message2);
-document.body.innerHTML += JSON.parse(JSON.stringify(event.data)) +
+document.body.innerHTML += Object.entries(event.data) +
   "<br>" +event.data.message2
   }
 };
